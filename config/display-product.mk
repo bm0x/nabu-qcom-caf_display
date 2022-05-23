@@ -30,6 +30,14 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@4.0.vendor \
     modetest
 
+#QDCM calibration xml file for 2k panel for nabu (Xiaomi Pad 5)
+ifneq ($(PRODUCT_IS_XIAOMI_NABU),true)
+PRODUCT_COPY_FILES += hardware/qcom-caf/sm8150/display/config/dsi_k82_36_02_0b_dual_cphy_vid_display_mi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dsi_k82_36_02_0b_dual_cphy_vid_display_mi.xml
+PRODUCT_COPY_FILES += hardware/qcom-caf/sm8150/display/config/dsi_k82_42_02_0a_dual_cphy_vid_display_mi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dsi_k82_42_02_0a_dual_cphy_vid_display_mi.xml
+PRODUCT_COPY_FILES += hardware/qcom-caf/sm8150/display/config/qdcm_calib_data_xiaomi_36_02_0b_video_mode_dual_dsi_cphy_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_xiaomi_36_02_0b_video_mode_dual_dsi_cphy_panel.xml
+PRODUCT_COPY_FILES += hardware/qcom-caf/sm8150/display/config/qdcm_calib_data_xiaomi_42_02_0a_video_mode_dual_dsi_cphy_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_xiaomi_42_02_0a_video_mode_dual_dsi_cphy_panel.xml
+endif
+
 #QDCM calibration xml file for 2k panel
 PRODUCT_COPY_FILES += hardware/qcom/display/config/qdcm_calib_data_nt35597_cmd_mode_dsi_truly_panel_with_DSC.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_nt35597_cmd_mode_dsi_truly_panel_with_DSC.xml
 PRODUCT_COPY_FILES += hardware/qcom/display/config/qdcm_calib_data_nt35597_cmd_mode_dsi_truly_panel_with_DSC.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_nt35597_video_mode_dsi_truly_panel_with_DSC.xml
